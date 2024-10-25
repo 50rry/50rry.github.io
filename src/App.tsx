@@ -25,7 +25,8 @@ function App() {
         }, [])
 
     useEffect(() => {
-        const statusTimeout = setTimeout(fetchStatus, 10000)
+        fetchStatus();
+        const statusTimeout = setInterval(fetchStatus, 10000)
     	return ()=>{clearTimeout(statusTimeout)}
     }, [fetchStatus]);
 
